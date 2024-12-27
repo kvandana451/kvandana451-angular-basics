@@ -3,9 +3,10 @@ import { Hero } from '../hero';
 import { FormsModule } from '@angular/forms';
 import { heroes } from '../data/heroes';
 import { NgFor, NgIf } from '@angular/common';
+import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 @Component({
   selector: 'app-heroes',
-  imports: [FormsModule, NgFor, NgIf],
+  imports: [FormsModule, NgFor, NgIf, HeroDetailComponent],
   templateUrl: './heroes.component.html',
   styleUrl: './heroes.component.scss',
 })
@@ -21,6 +22,5 @@ export class HeroesComponent {
   }
   ngOnInit() {
     // console.log(heroes);
-    console.log(this.isSelected);
   }
 }

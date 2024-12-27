@@ -18,7 +18,7 @@
     </ul>
 </div>
 
-<div *ngIf="isSelected">
+<!-- <div *ngIf="isSelected">
     <h2>{{isSelected.name}} Details</h2>
     <div>id: {{isSelected.id}}</div>
     <div>
@@ -26,4 +26,7 @@
         <input type="text" [(ngModel)]="isSelected.name">
     </div>
 
+</div> -->
+<div *ngIf="isSelected">
+    <app-hero-detail [passData]="isSelected"></app-hero-detail>
 </div>
