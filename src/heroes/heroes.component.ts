@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Hero } from '../hero';
 import { FormsModule } from '@angular/forms';
-import { heroes } from '../data/heroes';
+// import { heroes } from '../data/heroes';
 import { NgFor, NgIf } from '@angular/common';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
+import { HeroService } from '../hero.service';
 @Component({
   selector: 'app-heroes',
   imports: [FormsModule, NgFor, NgIf, HeroDetailComponent],
@@ -15,12 +16,17 @@ export class HeroesComponent {
   //   name: 'Windstorm',
   //   id: 1,
   // };
-  heroes: Hero[] = heroes;
+  // heroes: Hero[] = heroes;
+  heroes?: Hero[];
   isSelected?: Hero;
   onSelect(data: Hero) {
     this.isSelected = data;
   }
+  constructor(private heroService: HeroService) {}
+  getHeroes() {
+    this.heroService.getHeroes().subscribe((data) => (this.heroes = data));
+  }
   ngOnInit() {
-    // console.log(heroes);
+    this.getHeroes();
   }
 }
