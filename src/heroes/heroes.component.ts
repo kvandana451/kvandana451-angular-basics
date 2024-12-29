@@ -6,9 +6,10 @@ import { NgFor, NgIf } from '@angular/common';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-heroes',
-  imports: [FormsModule, NgFor, NgIf, HeroDetailComponent],
+  imports: [RouterLink, FormsModule, NgFor, NgIf, HeroDetailComponent],
   templateUrl: './heroes.component.html',
   styleUrl: './heroes.component.scss',
 })

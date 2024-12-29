@@ -1,9 +1,10 @@
-<div *ngIf="passData">
-    <h2>{{passData.name}} Details</h2>
-    <div>id: {{passData.id}}</div>
+<div *ngIf="hero">
+    <h2>{{hero.name}} Details</h2>
+    <div>id: {{hero.id}}</div>
     <div>
         <label>Hero name:</label>
-        <input type="text" [(ngModel)]="passData.name">
+        <input type="text" [(ngModel)]="hero.name">
     </div>
 
 </div>
+<button type="button" (click)="goBack()">go back</button>
